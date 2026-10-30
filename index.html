@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Essai B — homr dans le navigateur</title>
+<style>
+  body { background: #131316; color: #e4e1e6; font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 16px; }
+  button { background: #f97316; color: #1b1b1f; border: 0; border-radius: 999px; padding: 12px 20px; font-size: 16px; }
+  button:disabled { opacity: .4; }
+  pre { white-space: pre-wrap; word-break: break-word; background: #1f1f23; padding: 12px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>Essai B : modèles de homr dans le navigateur</h1>
+<p>Reproduit le calcul d'une page de chœur (54 morceaux d'image, 4 portées de 130 symboles) et mesure le temps.
+Laissez l'écran allumé pendant l'essai.</p>
+<button id="start">Lancer l'essai</button>
+<pre id="log"></pre>
+<p><small>Page d'essai provisoire de MyStroAi. Modèles de reconnaissance issus de
+<a href="https://github.com/liebharc/homr" style="color:#f97316">homr</a> (licence AGPL-3.0),
+exécutés avec ONNX Runtime Web (licence MIT).</small></p>
+<!-- GitHub Pages ne permet pas de régler les en-têtes COOP/COEP : ce service worker les ajoute (calcul sur plusieurs fils). -->
+<script src="coi-serviceworker.min.js"></script>
+<script src="ort/ort.wasm.min.js"></script>
+<script src="bench.js"></script>
+</body>
+</html>
